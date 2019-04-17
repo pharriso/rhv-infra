@@ -22,6 +22,26 @@
         cluster: TrustedCluster
         password: r3dh4t1!
 
+     storages:
+       VMStorageNFS:
+         master: true
+         state: present
+         nfs:
+           address: storage.example.com
+           path: /exports/vms
+       ISO:
+         domain_function: iso
+         state: present
+         nfs:
+           address: storage.example.com
+           path: /exports/isos
+       Export:
+         domain_function: export
+         state: present
+         nfs:
+           address: storage.example.com
+           path: /exports/export
+
   pre_tasks:
   - name: Login to oVirt
     ovirt_auth:
