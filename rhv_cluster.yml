@@ -44,6 +44,7 @@
 
      logical_networks:
       - name: vlan100
+        vlan_tag: 100
         clusters:
           - name: TrustedCluster
             assigned: yes
@@ -51,7 +52,20 @@
             display: no
             migration: no
             gluster: no
-            vlan_tag: 100
+            
+     host_networks:
+      - name: kvm1.example.com
+        check: true
+        save: true
+        interface: eth0
+        networks:
+          - name: vlan100
+      - name: kvm2.example.com
+        check: true
+        save: true
+        interface: eth0
+        networks:
+          - name: vlan100
 
   pre_tasks:
   - name: Login to oVirt
