@@ -11,6 +11,8 @@
      clusters:
       - name: TrustedCluster
         cpu_type: Intel Conroe Family
+        memory_policy: server
+        ha_reservation: true
 
      hosts:
       - name: kvm1.example.com
