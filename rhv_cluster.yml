@@ -42,6 +42,17 @@
            address: storage.example.com
            path: /exports/export
 
+     logical_networks:
+      - name: vlan100
+        clusters:
+          - name: TrustedCluster
+            assigned: yes
+            required: no
+            display: no
+            migration: no
+            gluster: no
+            vlan_tag: 100
+
   pre_tasks:
   - name: Login to oVirt
     ovirt_auth:
