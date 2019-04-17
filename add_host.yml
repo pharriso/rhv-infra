@@ -1,0 +1,30 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: false
+
+  vars:
+
+     clusters:
+      - name: TrustedCluster
+        cpu_type: Intel Conroe Family
+
+     hosts:
+      - name: kvm1.example.com
+        address: kvm1.example.com
+        cluster: TrustedCluster
+        password: r3dh4t1!
+      - name: kvm2.example.com
+        address: kvm2.example.com
+        cluster: TrustedCluster
+        password: r3dh4t1!
+
+  pre_tasks:
+  - name: Login to oVirt
+    ovirt_auth:
+      insecure: "{{ engine_insecure | default(true) }}"
+    tags:
+      - always
+
+  roles:
+    - ovirt.infra
