@@ -1,2 +1,5 @@
-# from galaxy
+# ovirt manage infra role
 - src: ovirt.infra
+
+# ovirt cluster upgrade role
+- src: ovirt.cluster-upgrade
