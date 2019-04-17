@@ -5,6 +5,9 @@
 
   vars:
 
+     data_center_name: CoolDataCenter
+     compatibility_version: 4.2
+
      clusters:
       - name: TrustedCluster
         cpu_type: Intel Conroe Family
