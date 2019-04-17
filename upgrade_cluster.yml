@@ -6,6 +6,7 @@
   vars:
 
     cluster_name: TrustedCluster
+    check_upgrade: true
 
   roles:
     - ovirt.cluster-upgrade
